@@ -1,0 +1,109 @@
+<h2>Investment Calculator</h2>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
+</head>
+
+<body>
+    <h2>Simple Calculator</h2>
+    <ul class="nav nav-tabs nav-justified">
+        <li role="presentation" class="active"><a href="#EndAmountTab" data-toggle="tab">End Amount</a></li>
+        <li role="presentation"><a href="#InvestmentLengthTab" data-toggle="tab">Investment Length</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="well tab-pane active" id="EndAmountTab">
+            <div class="row container">
+                @using (Html.BeginForm("/Index", "Calc", FormMethod.Post))
+                {
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="StartAmount"><i class="fas fa-dollar-sign"></i>StartAmount</label>
+
+                        <input type="text" class="form-control" id="StartAmount" name="StartAmount"
+                            value="@Model.StartAmount" />
+
+                    </div>
+                    <div class="form-group">
+                        <label for="MonthlyContribution">MonthlyContribution</label>
+                        <input type="text" class="form-control" id="MonthlyContribution" name="MonthlyContribution"
+                            value="@Model.MonthlyContribution" />
+                    </div>
+                    <div class="form-group">
+                        <label for="No2">ReturnRate</label>
+                        <input type="text" class="form-control" id="ReturnRate" name="ReturnRate"
+                            value="@Model.ReturnRate" />
+                    </div>
+                    <div class="form-group">
+                        <label for="No2">NumofInvestmentYear</label>
+                        <input type="text" class="form-control" id="NumofInvestmentYears" name="NumofInvestmentYears"
+                            value="@Model.NumofInvestmentYears" />
+                    </div>
+
+                    <button type="submit" class="btn-danger" id="add" value="submit" name="calculate">➕</button>
+
+
+                    <div class="form-group">
+                        <label for="Total">EndAmount</label>
+                        <input type="text" class="form-control" id="EndAmount" name="EndAmount"
+                            value="@Model.EndAmount" />
+                    </div>
+                </form>
+
+                }
+            </div>
+        </div>
+
+
+        <div class="well tab-pane" id="InvestmentLengthTab">
+            <div class="row container">
+                @using (Html.BeginForm("/Index", "Calc", FormMethod.Post))
+                {
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="StartAmount"><i class="fas fa-dollar-sign"></i>StartAmount</label>
+
+                        <input type="text" class="form-control" id="StartAmount" name="StartAmount"
+                            value="@Model.StartAmount" />
+
+                    </div>
+                    <div class="form-group">
+                        <label for="MonthlyContribution">MonthlyContribution</label>
+                        <input type="text" class="form-control" id="MonthlyContribution" name="MonthlyContribution"
+                            value="@Model.MonthlyContribution" />
+                    </div>
+                    <div class="form-group">
+                        <label for="No2">ReturnRate</label>
+                        <input type="text" class="form-control" id="ReturnRate" name="ReturnRate"
+                            value="@Model.ReturnRate" />
+                    </div>
+                    <div class="form-group">
+                        <label for="No2">End Amount</label>
+                        <input type="text" class="form-control" id="" name="EndAmount" value="@Model.EndAmount" />
+                    </div>
+
+                    <button type="submit" class="btn-danger" id="add" value="submit" name="calculate">➕</button>
+
+
+                    <div class="form-group">
+                        <label for="Total">Investment Lenght</label>
+                        <input type="text" class="form-control" id="EndAmount" name="NumofInvestmentYears"
+                            value="@Model.NumofInvestmentYears" />
+                    </div>
+                </form>
+
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
